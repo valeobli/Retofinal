@@ -11,8 +11,8 @@ public:
     Video();
     Video(string tipo, string nom, string gene, int cali, int ano, int dura);
 
-    void setTipoVideo(string tipo);
-    string getTipoVideo() const;
+    virtual void setTipoVideo(string tipo);
+    virtual string getTipoVideo() const;
 
     void setNombreVideo(string nom);
     string getNombreVideo() const;
@@ -32,6 +32,8 @@ public:
     void calificaVideo(int nuevaCalificacion);
 
     void muestraDatos() const;  
+
+    virtual string getTipo() const = 0;
 
 private:
     string tipoVideo;
