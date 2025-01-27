@@ -1,23 +1,17 @@
 #include "Pelicula.hpp"
-#include <iostream>
 
-Pelicula::Pelicula(string nom, string gene, int cali, int ano, int dura, string dir)
-    : Video("Pelicula", nom, gene, cali, ano, dura), director(dir) {}
+Pelicula::Pelicula(string nom, string gene, int cali, int ano, int dura, int nomi)
+    : Video(nom, gene, cali, ano, dura), nominaciones(nomi) {}
 
-void Pelicula::setDirector(string dir) {
-    director = dir;
-}
-
-string Pelicula::getDirector() const {
-    return director;
-}
+void Pelicula::setNominaciones(int nomi) { nominaciones = nomi; }
+int Pelicula::getNominaciones() const { return nominaciones; }
 
 void Pelicula::muestraDatos() const {
-    Video::muestraDatos();
-    cout << "Director: " << director << endl;
-}
-
-// Implementación del método getTipo para "Pelicula"
-string Pelicula::getTipo() const {
-    return "Pelicula";
+    cout << "\n[Película]" << endl;
+    cout << "Nombre: " << nombreVideo << endl;
+    cout << "Género: " << genero << endl;
+    cout << "Año de lanzamiento: " << anioLanzamiento << endl;
+    cout << "Duración: " << duracion << " min" << endl;
+    cout << "Calificación: " << calificacion << "/10" << endl;
+    cout << "Nominaciones: " << nominaciones << endl;
 }

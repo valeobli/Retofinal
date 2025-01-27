@@ -8,11 +8,8 @@ using namespace std;
 
 class Video {
 public:
-    Video();
-    Video(string tipo, string nom, string gene, int cali, int ano, int dura);
-
-    virtual void setTipoVideo(string tipo);
-    virtual string getTipoVideo() const;
+    Video(string nom, string gene, int cali, int ano, int dura);
+    virtual ~Video() {}
 
     void setNombreVideo(string nom);
     string getNombreVideo() const;
@@ -29,14 +26,9 @@ public:
     void setDuracion(int dura);
     int getDuracion() const;
 
-    void calificaVideo(int nuevaCalificacion);
+    virtual void muestraDatos() const = 0; // Método virtual puro
 
-    void muestraDatos() const;  
-
-    virtual string getTipo() const = 0;
-
-private:
-    string tipoVideo;
+protected:
     string nombreVideo;
     string genero;
     int calificacion;

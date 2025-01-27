@@ -5,17 +5,14 @@
 
 class Pelicula : public Video {
 private:
-    string director;
+    int nominaciones;
 
 public:
-    Pelicula(string nom, string gene, int cali, int ano, int dura, string dir);
+    Pelicula(string nom, string gene, int cali, int ano, int dura, int nomi);
+    void setNominaciones(int nomi);
+    int getNominaciones() const;
 
-    void setDirector(string dir);
-    string getDirector() const;
-
-    void muestraDatos() const;
-
-    string getTipo() const override;
+    void muestraDatos() const override;
 };
 
 #endif

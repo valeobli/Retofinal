@@ -5,21 +5,14 @@
 
 class Serie : public Video {
 private:
-    int numEpisodios;
-    int numTemporadas;
+    int cantEpisodios;
 
 public:
-    Serie(string nom, string gene, int cali, int ano, int dura, int episodios, int temporadas);
+    Serie(string nom, string gene, int cali, int ano, int dura, int episodios);
+    void setCantEpisodios(int episodios);
+    int getCantEpisodios() const;
 
-    void setNumEpisodios(int episodios);
-    int getNumEpisodios();
-
-    void setNumTemporadas(int temporadas);
-    int getNumTemporadas();
-
-    void muestraDatos();
-
-    string getTipo() const override;
+    void muestraDatos() const override;
 };
 
 #endif
